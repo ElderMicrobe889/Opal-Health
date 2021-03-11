@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<script defer="defer" type="text/javascript" src="{% static 'users/JS/register.js' %}"></script>
+
+<style>
+	body {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+	}
+
+	.formGroup h6 {
+		margin: 0px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv">
+	<form id="form" autocomplete="off" action="/users/register/" method="post" class="textContainer textMid">
+		{% csrf_token %}
+		<h2>Sign Up</h2>
+		<div class="formGroup">
+			<input id="firstName" type="text" placeholder="First Name" name="first-name" required="required" />
+              <label for="firstName">First Name</label>
+          </div>
+          <div class="formGroup">
+              <input id="lastName" type="text" placeholder="Last Name" name="last-name" required="required" />
+              <label for="lastName">Last Name</label>
+          </div>
+          <div class="formGroup">
+              <input id="dob" type="date" placeholder="Date of Birth" name="date-of-birth" required="required" />
+              <label for="dob">Date of Birth</label>
+          </div>
+          <div class="formGroup">
+              <input id="username" type="text" placeholder="Username" name="username" required="required" autocomplete="off"/>
+              <label for="username">Username</label>
+          </div>
+          <div class="formGroup">
+              <input id="email" type="email" placeholder="Email" name="email" required="required" />
+              <label for="email">Email</label>
+          </div>
+          <div class="formGroup" id="passwordError" style="display:none;">  
+            <p style="margin-top: 5px; color:red;">Your password contains the following errors:</p>
+            <ul style="color:red;" id="errorList"></ul>
+          </div>
+          <div class="formGroup" id="passwordHelp">
+            <p>Please make sure your password follows these rules:</p>
+            {{ passwordHelp }}
+          </div>
+          <div class="formGroup">
+              <input id="password" type="password" placeholder="Password" name="password" required="required" autocomplete="new-password" />
+              <label for="password">Password</label>
+          </div>
+          <div class="formGroup">
+              <input id="confirmPassword" type="password" placeholder="Confirm Password" name="confirm-password" required="required" />
+              <label for="confirmPassword">Confirm Password</label>
+          </div>
+          <div class="formGroup">
+              <button type="button" id="submitButton">{% formSubmit 'Register' as submit %}{{submit|safe}}</button>
+          </div>
+          <div class="formGroup">
+              <p>Have an account? <a href="/users/login/">Log in</a></p>
+          </div>
+	  </form>
+</div>
+{% endblock %}

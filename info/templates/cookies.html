@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %} Cookie Policy {% endblock %}
+
+{% block links %}
+<style>
+	.mainDiv a {
+		color: blue;
+	}
+
+	.mainDiv a:hover {
+		text-decoration: underline;
+	}
+
+	table,
+	th,
+	td {
+		border-collapse: collapse;
+		border: 1px solid black;
+		text-align: center;
+	}
+
+	th:first-of-type h4 {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall textLeft">
+	<h1 class="picDivHeader observed">Cookie Policy</h1>
+</div>
+<div class="mainDiv">
+	<div class="textContainer">
+		<h4>What are cookies?</h4>
+		<p>Cookies are simple text files that are stored on your computer or mobile device by a website’s server. Each cookie is
+			unique to your web browser. It will contain some anonymous information such as a unique identifier, the website’s domain
+			name, and some digits and numbers.</p>
+		<h4>What types of cookies do we use?</h4>
+		<p>This site only uses cookies necessary in order for us to provide our services to you, they also allow us to offer you
+			the best possible experience when accessing and navigating our website. A list of the cookies we store and what they are
+			used for is shown in the table below. Our hosting service also uses cookies, if you want information on their cookies
+			you can see their cookie policy <a href="https://www.pythonanywhere.com/privacy_v2/#cookies">here</a>.</p>
+		<table>
+			<tr>
+				<th>
+					<h4>Cookie Name</h4>
+				</th>
+				<th>
+					<h4>Description</h4>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p><b>sessionid</b></p></td>
+                <td><p>Stores data that is used to determine which account you're signed into</p></td>
+            </tr>
+            <tr>
+                <td><p><b>csrftoken</b></p></td>
+                <td><p>Prevents <a href="https://owasp.org/www-community/attacks/csrf#examples">cross-site request forgery</a></p></td>
+            </tr>
+            <tr>
+                <td><p><b>tz-offset</b></p></td>
+                <td><p>Stores your timezone’s offset from UTC time, this is used to help with appointment scheduling</p></td>
+            </tr>
+        </table>
+        <h4>How to delete cookies?</h4>
+        <p>If you want to restrict or block the cookies that are set by our website, you can do so through your browser setting, though we do not recommend doing so, as the services we provide depend heavily on them. Alternatively, you can visit <a href="http://www.internetcookies.org">this page</a>, which contains comprehensive information on how to do this on a wide variety of browsers and devices. You will find general information about cookies and details on how to delete cookies from your device.</p>
+        <h4>Questions?</h4>
+        <p>If you have any questions about this cookie policy or our use of cookies, please <a href="/info/contact/">contact us.</a></p>
+    </div>
+</div>
+{% endblock %}

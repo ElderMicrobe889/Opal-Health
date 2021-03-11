@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Healine Reset Password Email</title>
+</head>
+<body>
+	<h1> Hello, {{ user.display_name }} </h1>
+	<h2> We're emailing you because you requested a password reset </h2>
+	<h2> Your username is: {{ user.username }} </h2>
+	<p>Please click the link below to reset your password</p>
+	<a href="{{ link }}"> Reset Your Password </a>
+	<p> <strong> NOTE: Link is only valid for one day </strong> </p>
+</body>
+</html>

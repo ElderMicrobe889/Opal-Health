@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Appointment {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<script crossorigin="anonymous" defer type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+<script defer type="module" src="{% static 'service/JS/conf.js' %}"></script>
+<link href="{% static 'service/CSS/app.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+<div id="coverDiv">
+	<button class="text leave">Back</button>
+    <button aria-label="Toggle Microphone" class="micToggle crossed"><span></span><img class="micIcon" src="{% static 'service/IMG/Microphone.svg' %}"/></button>
+    <button aria-label="Toggle Camera" class="camToggle crossed"><span></span><img class="camIcon" src="{% static 'service/IMG/Camera.svg' %}"/></button>
+    <button aria-label="Flip Camera" class="flip"><img src="{% static 'service/IMG/FlipCameraToEnv.svg' %}"/></button>
+    <button id="join" class="text">Join Call</button>
+</div>
+<video id="remoteVideo" class="full" poster="{% if app.doctor == user %}{% static 'service/IMG/doctorWait.png' %}{% else %}{% static 'service/IMG/pleaseWait.png' %}{% endif %}" playsinline muted autoplay loop></video>
+<button style="cursor:default;" aria-label="Remote Microphone" id="remoteMic" disabled class="crossed"><span></span><img class="micIcon" src="{% static 'service/IMG/Microphone.svg' %}"/></button>
+<video id="localVideo" class="corner" poster="{% static 'service/IMG/noCam.png' %}" playsinline muted autoplay loop></video>
+<audio id="remoteAudio" class="noDisplay" autoplay playsinline></audio>
+<div id="messageMenuContainer">
+    <div id="messageMenu">
+        <h3>Chat</h3>
+        <div id="messages">
+        </div>
+        <div class="formGroup">
+              <input id="messageInput" type="text" />
+              <button aria-label="" id="send"><img src="{% static 'service/IMG/Send.svg' %}"/></button>
+        </div>
+    </div>
+</div>
+<div id="buttonContainer">
+    <button aria-label="Open/Close Chat" id="messageMenuButton"><img id="chatIcon" src="{% static 'service/IMG/Chat.svg' %}"/></button>
+    <button aria-label="Toggle Microphone" class="micToggle crossed"><span></span><img class="micIcon" src="{% static 'service/IMG/Microphone.svg' %}"/></button>
+    <button aria-label="Toggle Camera" class="camToggle crossed"><span></span><img class="camIcon" src="{% static 'service/IMG/Camera.svg' %}"/></button>
+    <button aria-label="Leave Call" class="leave"><img src="{% static 'service/IMG/Disconnect.svg' %}"/></button>
+    <button aria-label="Flip Camera" class="flip"><img src="{% static 'service/IMG/FlipCameraToEnv.svg' %}"/></button>
+    {% if app.doctor == user %}
+    <button id="end"><img class="micIcon" alt="End Appointment" src="{% static 'service/IMG/End.svg' %}"/></button>
+    {% endif %}
+</div>
+<div class="noDisplay" id="vals">
+  {{ app.id|json_script:"appointment-name" }}
+  {{ user.display_name|json_script:"my_name" }}
+</div>
+{% endblock %}

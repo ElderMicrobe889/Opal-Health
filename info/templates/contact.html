@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact Us {% endblock %}
+
+{% block links %}
+<style>
+	img {
+		width: 65%;
+	}
+
+    #logo {
+        width: auto;
+    }
+
+	.containerQuery {
+		align-items: initial;
+	}
+
+	.textContainer {
+		padding-top: 0px;
+		padding-bottom: 40px;
+		transition: background var(--menuTransitionTime) linear;
+		min-height: 100%;
+	}
+
+	.textContainer:hover {
+		background-color: var(--accentColor);
+	}
+
+	.mainDiv {
+		padding-bottom: 0px;
+	}
+
+	.picDivSmall {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, linear-gradient(45deg, hsla(298, 76%, 50%, 0.9) 0%, hsla(288, 83%, 38%, 1) 100%);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h1 class="picDivHeader observed">Contact Us</h1>
+</div>
+<div class="mainDiv">
+	<div class="containerQuery">
+		<div class="textContainer textCenter">
+			<h4>By Mail</h4>
+			{% load static %}
+			<img src="{% static 'info/IMG/Contact/MAIL.svg' %}" alt="Mail Icon">
+        <h6><a href="https://www.google.com/maps?q=2055+Limestone+Road,+Wilmington,+Delaware+19808,+USA">2055 Limestone&nbsp;Road, Wilmington, Delaware&nbsp;19808</a></h6>
+    </div>
+    <div class="textContainer textCenter">
+        <h4>By Email</h4>
+        <img src="{% static 'info/IMG/Contact/EMAIL.svg' %}" alt="Email Icon">
+        <h6><a href="mailto:Healine2004@gmail.com">Healine2004@gmail.com</a></h6>
+    </div>
+    <div class="textContainer textCenter">
+        <h4>By Phone</h4>
+        <img src="{% static 'info/IMG/Contact/PHONE.svg' %}" alt="Phone Icon">
+        <h6><a href="tel:+1‪-302-319-3544‬"> ‪(302)-319-3544‬ </a>
+            <br />
+            <br /> Mon to Fri / 7am to 10pm
+        </h6>
+    </div>
+  </div>
+</div>
+{% endblock %}

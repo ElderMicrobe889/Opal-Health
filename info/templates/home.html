@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock%}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'info/CSS/home.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDiv">
+	<h2 class="picDivHeader">Care</h2>
+	<h5 class="observed picDivHeader">When You Need It Most</h5>
+	<h4 class="picDivLine"><span id="picDivLine"></span></h4>
+      {% if user.is_authenticated %}
+        <a href="/service/appointments/"><button>Your Appointments</button></a>
+      {% else %}
+        <a href="/users/register/"><button>Join Today</button></a>
+      {% endif %}
+  </div>
+  <div class="accent2Div alertLike">
+      <div>
+          <button id="home" id aria-label="Close" class="alertLikeCloseButton">X</button>
+		  <p style="text-align: left;" class="alertContent">As we navigate through these increasingly tough times, know that health remains our <b>top priority</b>. COVID-19 has changed the way we live, but we will always be here to help you through. Despite any anxiety, stress, or feelings of loneliness you may have, <b>you are not alone</b>.
+          <br />
+		  </p>
+          <div style="text-align: right;">
+            <p>
+                <br />- Liam Stuart, MD
+                <br />Chief Medical Officer
+            </p>
+          </div>
+        </div>
+  </div>
+  <div class="mainDiv containerQuery">
+	  <div class="imgContainer">
+		  <img src="{% static 'info/IMG/Home/Home IMG 1.jpeg' %}" alt="Woman participating in a virtual consultation"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Taking Medicine into the Technological&nbsp;Age</h4>
+		  <h5>Here at Healine we believe in innovation, we're using new <span class="keepTogether">open-source</span> technologies to connect you to medical professionals from the comfort and safety of your home.</h5>
+		  <a href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+  <div  class="mainDiv containerQueryReverse accentDiv">
+	  <div class="textContainer textCenter">
+		<h4>What We Can Do To Help You</h4>
+		<h3><a href="/info/services/#dailyimg" id="dailyLink" class="healthLink">Everyday Care</a></h3>
+		<h3><a href="/info/services/#familyimg" id="familyLink" class="healthLink">Children/Family</a></h3>
+		<h3><a href="/info/services/#mentalimg" id="mentalLink" class="healthLink">Mental Health</a></h3>
+		<h3><a href="/info/services/#medicalimg" id="medicalLink" class="healthLink">Finding a Medical Specialist</a></h3>
+		<h3><a href="/info/services/#crisisimg" id="crisisLink" class="healthLink">Crisis Prevention</a></h3>
+	  </div>
+	  <div id="priorityDiv" class="textContainer">
+		<h4>Your Health Is Our<br />Top Priority</h4>
+		<h5>From our mental health specialists to our top of the line pediatric team, we have got you covered when anything goes wrong. We’re here to help you on your journey to wellness and good health.</h5>
+		<a href="/info/services/" ><button>See Everything We Treat</button></a>
+	  </div>
+  </div>
+  <div class="mainDiv containerQueryReverse">
+	  <div class="textContainer textRight">
+		  <h4>Transparent and Affordable Prices</h4>
+		  <h5>With Healine, there are no surprise fees. All pricing information is readily available before you sign up. There are no confusing subscriptions either, just pay when you need to.</h5>
+		  <a href="/info/services/" ><button>More Information </button></a>
+	  </div>
+	  <div class="imgContainer">
+		  <img src="{% static 'info/IMG/Home/Home IMG 2.jpeg' %}" alt="An ipad showing ecomic trends"/>
+	  </div>
+  </div>
+  <div id="stepsDiv" class="mainDiv accentDiv textCenter">
+	  <h4>Just Three Easy Steps</h4>
+	  <div id="stepsGraphicDiv" class="containerQuery">
+		  <div class="imgContainer">
+			  <img src="{% static 'info/IMG/Steps/sign_up.gif' %}" alt="Gif of first step - Sign Up For An Account"/>
+              <h6 style="margin-top:0px;">Sign Up</h6>
+		  </div>
+		  <div class="imgContainer">
+			  <img src="{% static 'info/IMG/Steps/create_app.gif' %}" alt="Gif of second step - Schedule A Meeting"/>
+              <h6 style="margin-top:0px;">Schedule A Meeting</h6>
+		  </div>
+		  <div class="imgContainer">
+			  <img src="{% static 'info/IMG/Steps/join_app.gif' %}"
+              alt="Gif of third step - Join The Meeting"/>
+              <h6 style="margin-top:0px;">Join The Meeting</h6>
+		  </div>
+	  </div>
+	  <a href="/info/works/"><button>More Info on How It Works</button></a>
+  </div>
+  <div id="joinDiv" class="mainDiv textCenter">
+	  <div>
+		  <h6>Are You Ready To Give Us A Try?</h6>
+		  <h2>We're Ready To Help You!</h2>
+		  <a href="/users/register/"><button>Join Today</button></a>
+	  </div>
+    </div>
+{% endblock %}

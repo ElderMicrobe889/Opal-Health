@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Reset Password {% endblock %}
+
+{% block links %}
+<style>
+	body {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv">
+	<form action="/users/resetrequest/" method="post" class="textContainer textMid">
+		{% csrf_token %}
+		<h1>Reset Password</h1>
+		<div class="formGroup">
+			<input id="email" type="email" placeholder="Email" name="email" required="required" />
+              <label for="email">Email</label>
+          </div>
+		  <div class="formGroup">
+		      <button type="submit">Send Email</button>
+          </div>
+	  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+p, a, label, input, button{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+p, a {
+  font-size: calc(1rem + 0.8vw);
+}
+
+h6 {
+  font-size: calc(1.1rem + 1vw);
+}
+
+h5, h5 a {
+  font-size: calc(1.2rem + 1.2vw);
+}
+
+h4 {
+  font-size: calc(1.4rem + 1.4vw);
+}
+
+h3 {
+  font-size: calc(1.5rem + 1.6vw);
+}
+
+h2 {
+  font-size: calc(1.6rem + 1.8vw);
+}
+
+h1 {
+  font-size: calc(1.7rem + 2vw);
+}

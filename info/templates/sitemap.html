@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Sitemap {% endblock %}
+
+{% block links %}
+  <style>
+    ul {
+      list-style-type: upper-roman;
+    }
+
+    ul h6 {
+      margin: 12px;
+    }
+
+    li::marker {
+      font-size: calc(1.5rem + 1.6vw);
+    }
+
+    li ul li::marker {
+      font-size: calc(1.1rem + 1vw);
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="mainDiv picDivSmall">
+    <h1 class="picDivHeader observed">Site Map</h1>
+  </div>
+  <div class="accent2Div alertLike">
+    <div>
+      <button id="sitemap" id aria-label="Close" class="alertLikeCloseButton">X</button>
+        <h4 class="alertContent">IMPORTANT NOTE: Some Pages Are Only Available To Users Who Are Logged In.</h4>
+    </div>
+  </div>
+  <div class="textContainer">
+      <ul>
+          <li>
+              <h3>General & Information</h3>
+              <ul>
+                  <li><a href="/"><h6>Home</h6></a></li>
+                  <li><a href="/info/services/"><h6>Our Services</h6></a></li>
+                  <li><a href="/info/contact/"><h6>Contact Us</h6></a></li>
+                  <li><a href="/info/sitemap/"><h6>Sitemap</h6></a></li>
+                  <li><a href="/info/privacy/"><h6>Privacy Policy</h6></a></li>
+                  <li><a href="/info/cookies/"><h6>Cookie Policy</h6></a></li>
+                  <li><a href="/info/terms/"><h6>Terms of Service</h6></a></li>
+              </ul>
+          </li>
+          <li>
+              <h3>Account Related</h3>
+              <ul>
+                  <li><a href="/users/register/"><h6>Register</h6></a></li>
+                  <li><a href="/users/login/"><h6>Log In</h6></a></li>
+                  {% if user.is_authenticated %}
+                  <li><a href="/users/account/"><h6>Account Settings</h6></a></li>
+                  <li><a href="/service/appointments/"><h6>Scheduled Appointments</h6></a></li>
+                  {% endif %}
+              </ul>
+          </li>
+      </ul>
+  </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} Paperwork {% endblock %}
+
+{% block links %}
+
+{% load static %}
+
+<style>
+
+  .toggleButton {
+    width:80%;
+    margin-bottom:20px;
+  }
+
+  .pdfDisplay {
+    height: 1000px;
+    width: 80%;
+    transition: height 1.4s ease-in-out;
+    padding: 3px;
+    padding-bottom: 5px;
+  }
+
+  .noDisplay {
+    height: 0px;
+  }
+
+</style>
+
+<script defer>
+
+  $(document).ready(function(){
+
+    $("#plan_of_work_toggle").click(function(){
+
+      $("#plan_of_work_pdf").toggleClass("noDisplay");
+
+    });
+
+    $("#copyright_toggle").click(function(){
+
+      $("#copyright_pdf").toggleClass("noDisplay");
+
+    });
+
+  });
+
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="mainDiv picDivSmall textLeft">
+	  <h1 class="picDivHeader observed">Paperwork</h1>
+  </div>
+
+  <div class="mainDiv containerQuery">
+    <div class="textContainer textCenter">
+      <p>If you can't see the pdf files in-browser, please use these links to download them:</br> <a style="color:blue;" href="{% static 'chapter/PDF/plan_of_work.pdf' %}">Download Plan Of Work</a>  |   <a style="color:blue;" href="{% static 'chapter/PDF/copyright.pdf' %}">Download Copyright Checklist</a></p>
+      <button id="plan_of_work_toggle" class="toggleButton" ><h4>Plan Of Work (Click To Show/Hide)</h4></button>
+      <object class="noDisplay pdfDisplay" id="plan_of_work_pdf" type="application/pdf" data="{% static 'chapter/PDF/plan_of_work.pdf' %}"></object>
+      <button id="copyright_toggle" class="toggleButton" ><h4>Copyright Checklist (Click To Show/Hide)</h4></button>
+      <object class="noDisplay pdfDisplay" id="copyright_pdf" type="application/pdf" data="{% static 'chapter/PDF/copyright.pdf' %}"></object>
+    </div>
+  </div>
+
+{% endblock %}

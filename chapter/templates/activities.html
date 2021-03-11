@@ -1,0 +1,46 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} Activities {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h1 class="picDivHeader observed">Activities</h1>
+</div>
+<div class="mainDiv containerQuery">
+	<div class="imgContainer">
+		<img src="{% static '/chapter/IMG/activities/5k.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Annual 5K</h4>
+		  <p>The annual BASH TSA 5K is a fundraising event run by the BASH TSA chapter. Proceeds from the run benefit the American Cancer Society, and help fund the trip to the TSA state conference. This year, the 5k will have both an in-person and virtual option to comply with local COVID-19 regulations.</p>
+	  </div>
+</div>
+<div class="mainDiv containerQueryReverse accentDiv">
+	  <div class="imgContainer">
+		  <img src="{% static '/chapter/IMG/angel.jpg' %}"/>
+	  </div>
+	  <div class="textContainer">
+		  <h4>Angel Tree Drive</h4>
+		  <p>The yearly Angel Tree Drive is a charity event run by the Salvation Army around Christmas time to help bring gifts to underprivileged families. BASH TSA participates in this event yearly by purchasing and donating items for the Salvation Army to distribute.</p>
+	  </div>
+</div><div class="mainDiv containerQuery">
+	  <div class="imgContainer">
+		  <img src="{% static '/chapter/IMG/chocolate.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Chocolate Sale</h4>
+		  <p>The Gertrude Hawk Chocolate Bar Sale is a new fundraiser for BASH TSA this year. Participating students will have the opportunity to sell chocolate bars throughout the month of January to help fundraise for the PA-TSA State Conference.</p>
+	  </div>
+</div>
+<div class="mainDiv containerQueryReverse accent2Div">
+	  <div class="imgContainer">
+		  <img src="{% static '/chapter/IMG/clothing.jpg' %}"/>
+	  </div>
+	  <div class="textContainer">
+		  <h4>Clothing Drive</h4>
+		  <p>Each year, BASH TSA runs a clothing drive at the school to donate to local non-profit organizations. Through the months of November and December, people can drop off various articles of clothing to the BASH TSA homeroom for the chapter to donate at the end of the event. BASH TSA usually donates at least 5000 lbs of clothes per year. </p>
+	  </div>
+</div>
+{% endblock %}

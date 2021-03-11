@@ -1,0 +1,87 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} About {% endblock %}
+
+{% block links %}
+<style>
+	.noMargin {
+		margin: 0px;
+	}
+
+	.noPaddingTop {
+		padding-top: 0px;
+	}
+
+	.noPaddingBottom {
+		padding-bottom: 0px;
+	}
+
+	#halfPaddingTop {
+		padding-top: 3.125%;
+	}
+
+	.textContainer a {
+		color: blue;
+	}
+
+	.textContainer a:hover {
+		text-decoration: underline;
+	}
+
+	.accentDiv .textContainer a {
+		color: #262692;
+	}
+</style>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="mainDiv picDivSmall textLeft">
+	<h1 class="picDivHeader observed">About</h1>
+</div>
+<div id="tsa" class="mainDiv containerQuery">
+	<div class="imgContainer">
+		<img style="width:75%;" src="{% static '/chapter/IMG/tsa_logo.png' %}"/>
+	  </div>
+	  <div class="textContainer textRight noPaddingBottom">
+		  <h4>About TSA</h4>
+		  <p>TSA is a Career and Technical Student Organization (CTSO) devoted to the promotion of Science, Technology, Engineering, Mathematics, (STEM) activities, leadership experience, and personal development. Students worldwide participate in a variety of competitions designed to apply and integrate these core concepts. Since TSA was founded in 1978, more than five million students have participated worldwide, with national membership this year reaching approximately 250,000. TSA’s reach extends to 2,300 schools across the globe. Some of the most popular TSA events include biotechnology, architectural design, video game design, and webmaster. As a CTSO, TSA has helped millions of students gain hands-on experience in a variety of fields.</p>
+	  </div>
+</div>
+<div id="tsa" class="mainDiv containerQuery">
+      <div>
+          <div class="textContainer noPaddingBottom">
+	      	  <h4 class="noMargin">TSA's Mission</h4>
+	      	  <p>The <a href="https://tsaweb.org/tsa">Technology Student Association (TSA)</a> enhances personal development, leadership, and career opportunities in science, technology, engineering, and math (STEM), whereby members apply and integrate these concepts through intracurricular activities, competitions, and related programs.</p>
+	      </div>
+          <div class="textContainer noPaddingTop noPaddingBottom">
+	      	  <h4 class="noMargin">TSA's Vision</h4>
+	      	  <p>TSA is accelerating student achievement and supporting teachers by providing engaging opportunities to develop STEM skills.</p>
+	      </div>
+          <div class="textContainer noPaddingTop">
+	      	  <h4 class="noMargin">The National Moto</h4>
+	      	  <p>Together Towards Tomorrow.</p>
+	      </div>
+      </div>
+	  <div id="halfPaddingTop" class="textContainer textRight">
+		  <h4 class="noMargin">The TSA Creed</h4>
+		  <p>I believe that Technology Education holds an important place in my life in the technical world. I believe there is a need for the development of good attitudes concerning work, tools, materials, experimentation, and processes of industry. Guided by my teachers, artisans from industry, and my own initiative, I will strive to do my best in making my school, community, state, and nation better places in which to live.
+          <br />
+          <br />
+          I will accept the responsibilities that are mine. I will accept the theories that are supported by proper evidence. I will explore on my own for safer, more effective methods of working and living. I will strive to develop a cooperative attitude and will exercise tact and respect for other individuals. Through the work of my hands and mind, I will express my ideas to the best of my ability. I will make it my goal to do better each day the task before me, and to be steadfast in my belief in my God, and my fellow Americans.</p>
+	  </div>
+</div>
+<div class="mainDiv accentDiv">
+	  <div class="textContainer">
+		  <h4>About This Website</h4>
+		  <p>The entirety of this website and the design brief portion of the website was made by team 2004-902 in the 2020-2021 school year. It was built using <a href="https://www.python.org/">Python</a> with <a href="https://www.djangoproject.com/">Django</a> for the backend, and HTML with the <a href="https://palletsprojects.com/p/jinja/">Jinja</a> template syntax, Vanilla CSS, and Javascript with the use of <a href="https://jquery.com/">JQuery</a>, and <a href="https://github.com/js-cookie/js-cookie">Cookie.js</a> for the frontend. In addition, <a href="https://www.scaledrone.com/">Scaledrone</a> is used for the signaling process in Appointment conferences. All fonts are from <a href="https://fonts.google.com/">Google Fonts</a>. This site is hosted on <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>. All images used were either our own or provided by <a href="https://www.pexels.com/">Pexels</a>. The <a href="https://tsaweb.org/">TSA</a> and <a href="https://www.berkscareer.com/">BCTC</a> logos are the legal property of their respective organizations.</p>
+	  </div>
+</div>
+<div class="mainDiv">
+	  <div class="textContainer textRight">
+		  <h4>About Our Team</h4>
+		  <p>2004-019 worked as the main front-end developer and main writer for content on the chapter portion of the website. 2004-006 was the main backend developer, acted as a secondary frontend developer, the main photographer, and icon designer. 2004-015 wrote and revised the majority of the text content for the design brief portion of the site. Lastly, 2004-049 and 2004-034 decided on the general aesthetic of the design brief portion of the site.</p>
+	  </div>
+</div>
+{% endblock %}

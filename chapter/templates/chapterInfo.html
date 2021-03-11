@@ -1,0 +1,65 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} Chapter {% endblock %}
+
+{% block links %}
+<style>
+	.textContainer #officerImgContainer {
+		margin-right: 0px;
+	}
+
+	.textRight #officerImgContainer {
+		margin-right: 0px;
+	}
+
+	#officerImgContainer img {
+		padding: 0px;
+	}
+</style>
+{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="mainDiv picDivSmall textLeft">
+	<h1 class="picDivHeader observed">Chapter Information</h1>
+</div>
+<div class="mainDiv containerQuery">
+	<div class="imgContainer">
+		<img src="{% static '/chapter/IMG/history_org.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>History of BASH TSA</h4>
+		  <p>The BASH TSA Chapter was started in 1989, and since then has grown to become one of the best chapters in Pennsylvania. The current chapter advisor, Joshua Pennington, a former recipient of the National Advisor of The Year Award, has worked hard to help continue the chapter’s streak of qualification for the state conference that started in the early 2000s. On top of this, the BASH TSA chapter has produced many state officers over the past few years including Mark Schell, State President, 1995 - 1996; Olivia Crocker, State President, 2014 - 2015; Abigail Reigner, State Treasurer, 2017 - 2018, and State President, 2018 - 2019; Joshua Famous, State Sergeant At Arms, 2018 - 2019; and the Current Chapter President, Madison Martin, State Reporter, 2020 - Present.</p>
+	  </div>
+</div>
+<div class="mainDiv accentDiv">
+      <div class="textContainer textCenter">
+	  	  <h3>Our Chapter Moto<br /><br /></h3>
+            <h1 style="font-weight: normal;">Virtually Unstoppable</h1>
+	  </div>
+</div>
+<div class="mainDiv containerQuery">
+	  <div class="imgContainer">
+		  <img src="{% static '/chapter/IMG/activity.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Chapter Activites</h4>
+		  <p>Our Chapter runs a variety of different community activities. Unfortunately, due to COVID-19, we are unable to do a large portion of them. We are still however planning to run our 5K, Angel Tree Drive, Chocolate Sale, and Clothing Drive. Assuming circumstances permit, we would also like to do one of our biggest fundraisers Bag Bingo.</p>
+		  <a href="/chapter/activities/" ><button>More Information on Activites</button></a>
+	  </div>
+</div>
+<!-- <div  class="mainDiv containerQuery accent2Div">
+	  <div class="textContainer">
+		  <h4>Our Officer Team</h4>
+		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu.</p>
+	  </div>
+	  <div id="priorityDiv" class="textContainer textRight">
+		<h4>Name -Job Title</h4>
+        <div class="imgContainer">
+		    <img id="officerImg" src="https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png"/>
+	    </div>
+		<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu.</h5>
+	  </div>
+</div> -->
+{% endblock %}

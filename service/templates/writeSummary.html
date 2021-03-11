@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Write Summary {% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv picDivSmall">
+	<h3 class="observed picDivHeader">Post-Appointment Summary</h3>
+</div>
+<div class="mainDiv">
+	<form action="/service/finalize/" method="post" class="textContainer textMid">
+		{% csrf_token %}
+		<input type="hidden" name="id" value="{{app.id}}"/>
+      <div class="formGroup alwaysLong">
+        <textarea placeholder="Summary" required="required" type="text" name="summary" id="summary"></textarea>
+        <label for="summary"> Summary </label>
+      </div>
+      <div class="formGroup">
+        <button onclick="toggleLoad();" value="OK" type="submit">{% formSubmit 'Submit' as submit %}{{submit|safe}}</button>
+      </div>
+    </form>
+</div>
+{% endblock %}

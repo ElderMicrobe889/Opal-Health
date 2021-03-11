@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %} Account {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'users/CSS/accountPopups.css' %}" rel="stylesheet" type="text/css" />
+<script defer="defer" type="text/javascript" src="{% static 'users/JS/account.js' %}"></script>
+
+<style>
+	.mainDiv {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding-top: var(--navHeight);
+	}
+
+	button {
+		margin-block-start: 1.67em;
+		margin-block-end: 1.67em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	}
+
+	h5 span {
+		font-weight: normal;
+	}
+
+  .passwordRuleList {
+    text-align: left;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv">
+	<div id="emailBG" class="popup_bg">
+		<div class="box_container">
+			<div id="emailBox" class="popup_box">
+				<form class="textContainer textMid" action="/users/change_email/" method="post">
+					{% csrf_token %}
+					<h3> Change Email </h3>
+					<div class="formGroup">
+						<input id="new_email" autocomplete="off" name="new_email" type="email" required="required" placeholder="New Email"/>
+            <label for="new_email"> New Email </label>
+          </div> 
+          <div class="formGroup">
+            <button class="popupButton" type="button" id="emailClose"> Cancel </button>
+            <button value="OK" class="popupButton" type="submit"> Change </button>
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+    <div id="changeBG" class="popup_bg">
+        <div class="box_container">
+      <div id="changeBox" class="popup_box">
+        <form id="resetPassForm" class="textContainer textMid" action="/users/account/change/" method="post"> 
+          {% csrf_token %}
+          <h3 > Change Password </h3>
+          <div class="formGroup">
+            <input id="current_password" autocomplete="new-password" name="current_password" type="password" required="required" placeholder="Current Password"/>
+            <label for="current_password"> Current Password </label>
+          </div>
+          <div class="formGroup passwordRuleList" id="passwordError" style="display:none;">  
+            <p style="margin-top: 5px; color:red;">Your new password contains the following errors:</p>
+            <ul style="color:red;" id="errorList"></ul>
+          </div>
+          <div class="formGroup passwordRuleList" id="passwordHelp">
+            <p>Please make sure your new password follows these rules:</p>
+            {{ passwordHelp }}
+          </div>
+          <div class="formGroup">
+            <input id="new_password" autocomplete="new-password" name="new_password" type="password" required="required" placeholder="New Password"/>
+            <label for="new_password"> New Password </label>
+          </div> 
+          <div class="formGroup">
+            <button class="popupButton" type="button" id="changeClose"> Cancel </button>
+            <button id="changePassSubmit" value="OK" type="button" class="popupButton"> Change </button>
+          </div>
+        </form>
+      </div>
+        </div>
+    </div>
+    <div id="deleteBG" class="popup_bg">
+        <div class="box_container">
+      <div style="border-image:initial;border-color:red;" id = "deleteBox" class="popup_box">
+        <form class="textContainer textMid" action="/users/account/delete/" method="post"> 
+          {% csrf_token %}
+          <h3 style="color:red;"> Delete Account </h3>
+          <p> Once an account is deleted, it is not recoverable. </p>
+          <div class="formGroup">
+            <input id="password" autocomplete="new-password" name="password" type="password" required="required" placeholder="Password"/>
+            <label for="password"> Password </label>
+          </div> 
+          <div class="formGroup">
+            <button class="popupButton" type="button" id="deleteClose"> Cancel </button>
+            <button value="OK" style="border-color:red;" class="popupButton" type="submit"> Delete </button>
+          </div>
+        </form>
+      </div>
+        </div>
+    </div>
+    <h3>Account Settings for {{user.username}}</h3>
+    <h5>Name: <span>{{user.display_name}}</span></h5>
+    <h5>Date Of Birth: <span>{{user.dateOfBirth}}</span></h5>
+    <h5>Email:
+    {% if user.confirmed %}
+    <span>{{user.email}}</span>
+    {% else %}
+    Not Confirmed: <a href="/users/sendconfirm/">Resend?</a>
+    {% endif %}
+    </h5>
+    <button id="emailChange">Change Email</button>
+    <button id="changeChange">Change Password</button>
+    <button id="deleteChange">Delete Account</button>
+</div>
+{% endblock %}

@@ -1,0 +1,133 @@
+:root {
+    --dailyColor: maroon;
+    --familyColor: darkblue;
+    --mentalColor: green;
+    --medicalColor: darkmagenta;
+    --crisisColor: #CF541F;
+}
+
+h5 {
+    font-weight: normal;
+}
+
+.mainDiv:not(.picDiv) a {
+    margin-top: 40px;
+}
+
+#covidDiv {
+    min-height: 0px;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+@media only screen and (max-width: 610px) {
+    #covidDiv {
+        padding-top: 25px;
+    }
+}
+
+#covidDiv * {
+    margin: 0px;
+}
+
+#covidDiv .textContainer {
+    padding: 6.25%;
+}
+
+#covidX {
+    position: relative;
+    right: 12px;
+}
+
+#covidX, #covidX::before, #covidX::after {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    transition: transform var(--menuTransitionTime) ease-in-out, opacity var(--menuTransitionTime) ease-out;
+}
+
+#covidButton {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border: 0px!important;
+    background-color: rgba(0,0,0,0)!important;
+}
+
+#covidButton:hover {
+    background-color: rgba(0,0,0,0)!important;
+}
+
+.healthLink {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    box-shadow: inset 0px -2px 0px 0px var(--shadowColor);
+    transition: padding-left 150ms linear, padding-right 150ms linear;
+}
+
+.healthLink:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#dailyLink {
+    --shadowColor: var(--dailyColor);
+}
+
+#familyLink {
+    --shadowColor: var(--familyColor);
+}
+
+#mentalLink {
+    --shadowColor: var(--mentalColor);
+}
+
+#medicalLink {
+    --shadowColor: var(--medicalColor);
+}
+
+#crisisLink {
+    --shadowColor: var(--crisisColor);
+}
+
+#stepsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#stepsDiv .imgContainer img {
+    padding: 0px;
+}
+
+#stepsGraphicDiv {
+    --switchPoint: 800px;
+}
+
+#stepsGraphicDiv .imgContainer:nth-of-type(2) img {
+    margin: 6.25%;
+}
+
+#joinDiv {
+    background-image: linear-gradient(225deg, hsla(298, 76%, 50%, 0.9) 0%, hsla(288, 83%, 38%, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60vh;
+}
+
+#joinDiv h6 {
+    margin: 0px;
+}
+
+#joinDiv h2 {
+    margin-top: 0px;
+}
+
+@media only screen and (min-width: 990px) {
+    #priorityDiv {
+        padding-right: 0px;
+    }
+}

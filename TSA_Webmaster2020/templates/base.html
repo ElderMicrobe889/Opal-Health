@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'base/IMG/fav/apple-icon-57x57.png' %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static 'base/IMG/fav/apple-icon-60x60.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'base/IMG/fav/apple-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'base/IMG/fav/apple-icon-76x76.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'base/IMG/fav/apple-icon-114x114.png' %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'base/IMG/fav/apple-icon-120x120.png' %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'base/IMG/fav/apple-icon-144x144.png' %}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'base/IMG/fav/apple-icon-152x152.png' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'base/IMG/fav/apple-icon-180x180.png' %}">
+	<link rel="icon" type="image/png" sizes="192x192" href="{% static 'base/IMG/fav/android-icon-192x192.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'base/IMG/fav/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'base/IMG/fav/favicon-96x96.png' %}">
+  <link rel="manifest" href="/info/manifest">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'base/IMG/fav/favicon-16x16.png' %}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{% static 'base/IMG/fav/ms-icon-144x144.png' %}">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+	<meta name="description" content="Healine Medical Services">
+	<meta name="google" value="notranslate">
+	<title>{% block title %}{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+	<link crossorigin="anonymous" rel="preconnect" href="https://fonts.gstatic.com">
+	<link crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link href="{% static 'base/CSS/text.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'base/CSS/master.css' %}" rel="stylesheet" type="text/css" />
+	<script defer="defer" type="text/javascript" src="{% static 'base/JS/master.js' %}"></script>
+	{% block links %} {% endblock %}
+  {% load alertTags %}
+  {% getAlert request as alert %}
+  {% if alert %}
+  <script type="text/javascript" defer="defer">
+    $(document).ready(function(){showAlert('{{alert}}', color="{% getAlertType request %}");});
+    history.pushState({'alert':true}, document.title, window.location.pathname);
+  </script>
+  {% endif %}
+</head>
+<body>
+	<header>
+		<button aria-label="Open/Close Navigation Menu" id="menuButton"><span id="menuIcon"></span></button>
+          <a href="/" id="logoContainer"><img alt="Healine Logo" id="logo" src="{% static 'base/IMG/Banner.svg' %}" /></a>
+          <nav id="nav">
+            <a href="/info/services/" class="navLink desktop">Our Services</a>
+            {% if not user.is_authenticated %}
+              <a href="/info/works/" class="navLink desktop">How It Works</a>
+              <a href="/info/contact/" class="navLink desktop">Contact Us</a>
+            {% endif %}
+            <a href="/chapter/" class="navLink desktop">BASH TSA</a>
+            {% if user.is_authenticated %}
+              <a href="/service/appointments/" class="navLink both">Appointments</a>
+              <a href="/users/account/" class="navLink desktop">Account</a>
+              <a href="/users/logout/" class="navLink desktop">Logout</a>
+            {% else %}
+              <a href="/users/login/" class="navLink both">Log In</a>
+            {% endif %}
+          </nav>
+          <nav id="menuContainer">
+          <div id="menu">
+              <a href="/" class="navLink phone">Home</a>
+              <a href="/info/services/" class="navLink phone">Our Services</a>
+              <a href="/info/works/" class="navLink phone">How It Works</a>
+              <a href="/info/contact/" class="navLink phone">Contact Us</a>
+              <a href="/chapter" class="navLink phone">BASH TSA</a>
+              {% if user.is_authenticated %}
+                <a href="/users/account/" class="navLink phone">Account</a>
+                <a href="/users/logout/" class="navLink phone">Logout</a>
+              {% endif %}
+          </div>
+      </nav>
+  </header>
+  <div id="alertBox">
+      <button id="alertCloseButton">X</button>
+      <div id="alertContent">
+          <p id="alertText"></p>
+      </div>
+  </div>
+  <section class="main">
+    {% block content %}
+    <h1> Error Loading Content </h1>
+    {% endblock %}
+  </section>
+      <footer>
+          <a href="/info/sitemap/" class="footerLink">Site Map</a>
+          <a href="/info/services/#FAQDivScroller" class="footerLink">FAQs</a>
+          {% if user.is_authenticated %}
+          <a href="/info/contact/" class="footerLink">Contact Us</a>
+          <a href="/info/works/" class="footerLink">How It Works</a>
+          {% endif %}
+          <a href="/info/privacy/" class="footerLink">Privacy Policy</a>
+          <a href="/info/cookies/" class="footerLink">Cookie Policy</a>
+          <a href="/info/terms/" class="footerLink">Terms Of Service</a>
+      </footer>
+</body>
+</html>

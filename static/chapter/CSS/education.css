@@ -1,0 +1,110 @@
+#picker {
+    display: flex;
+    justify-content: space-around;
+}
+
+#info, #picker {
+    background-color: var(--accentColor);
+    padding: 24px 0px;
+    margin: 0px;
+}
+
+.option {
+    display: none;
+    text-align: center;
+    width: 140px;
+    min-width: 185px;
+    height: 170px;
+    margin: 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.option.picked, .option.leftRightButton {
+    display: flex;
+    visibility: visible;
+    justify-content: center;
+    align-items: center;
+}
+
+.option.leftRightButton {
+    min-width: 0px;
+    width: auto;
+}
+
+.optionDiv {
+    display: none;
+}
+
+.optionDiv.picked {
+    display: initial;
+}
+
+.subjectHeaderContainer {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.subjectHeaderContainer:nth-of-type(1) {
+    padding-top: 6.25%;
+}
+
+.subjectHeaderContainer h2 {
+    border-bottom: solid 2px black;
+    margin: 0px;
+}
+
+.subjectHeaderContainer:nth-of-type(1) h1 {
+    margin-top: 45px;
+}
+
+.editedTextContainer {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.editedTextContainer h4 {
+   margin: 0px;
+}
+
+.firstEdited h4 {
+    margin-top: 55px;
+}
+
+.lastEdited {
+    padding-bottom: 6.25%;
+}
+
+#info {
+    display: none;
+}
+
+@media only screen and (min-width: 1030px) {
+    .option {
+        width: auto;
+        margin: 20px;
+        height: auto;
+        display: initial;
+    }
+
+    .option.picked, .option:hover {
+        background-color: var(--accent2Color);
+        border-radius: 25px;
+    }
+
+    #info {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .option.leftRightButton {
+        display: none;
+        visibility: hidden;
+    }
+
+    #picker {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

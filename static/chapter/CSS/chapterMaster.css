@@ -1,0 +1,61 @@
+:root {
+    --mainColor: crimson;
+    --darkColor: darkred;
+    --lightColor: rgb(206, 101, 101);
+    --accentColor: indianred;
+    --accent2Color: #D14D4D;
+    
+    --textColor: black;
+    --backgroundColor: thistle;
+    --formInputGradient: linear-gradient(to right, hsl(298, 76%, 50%), hsla(288, 83%, 38%, 1));
+    --inputTextColor: var(--darkColor);
+    --labelFocusColor: hsl(298, 76%, 50%);
+    --inactiveInputColor: #9b9b9b;
+    
+    --navColor: rgb(158, 39, 39);
+    --menuColor: var(--lightColor);
+    --navHeight: 50px;
+    --currentColor:rgb(95, 72, 72);
+    --phoneCurrentColor: var(--darkColor);
+    --menuTransitionTime: 350ms;
+}
+
+/* NAVIGATION/MENU */
+
+header.scrolled {
+    box-shadow: 0px 2px 4px 0px var(--navColor);
+}
+
+.navLink.phone:hover {
+    color: rgb(146, 80, 80);
+}
+
+#logoContainer {
+    width: 35%;
+}
+
+@media only screen and (max-width: 250px) {
+    #logoContainer {
+        width: 30%;
+    }
+}
+
+/* NAVIGATION/MENU END */
+
+/* FOOTER */
+
+#socialLinksDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FOOTER END */
+
+/* REUSABLE CLASSES */
+
+.picDiv, .picDivSmall {
+    background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--mainColor);
+}
+
+/* REUSSABLE CLASSES END */

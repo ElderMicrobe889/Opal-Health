@@ -1,0 +1,87 @@
+.textContainer {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.containerQuery h5 {
+    font-weight: normal;
+}
+
+
+#pickerDiv {
+    padding-bottom: 0px;
+    background-color: darkgray;
+    min-height: initial;
+}
+
+#pickerDiv h1 {
+    padding-top: 50px;
+    margin-top: 0px;
+}
+
+#holder {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#holder img {
+    min-width: 139px;
+    width: 16%;
+    display: none;
+    visibility: hidden;
+    padding: 10px;
+}
+
+#holder img:hover {
+    background-color: dimgrey!important;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+#holder img.picked {
+    display: initial;
+    visibility: initial;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.containerQuery {
+    box-shadow: 0px 3px 5px 0px dimgray; 
+    display: none;
+    visibility: hidden;
+}
+
+.containerQuery.picked {
+    display: flex;
+    visibility: initial;
+}
+
+.leftRightButton {
+    border: none!important;
+    background-color: initial!important;
+}
+
+.imgContainer img {
+    padding-top: 6.25%;
+}
+
+#FAQDiv .textContainer div:nth-of-type(odd) {
+    text-align: right;
+}
+
+@media only screen and (min-width: 940px) {
+    #holder img {
+        display: initial;
+        visibility: initial;
+    }
+
+    .leftRightButton {
+        display: none;
+        visibility: hidden;
+    }
+
+    #holder img.picked {
+        background-color: var(--accent2Color);
+    }
+}

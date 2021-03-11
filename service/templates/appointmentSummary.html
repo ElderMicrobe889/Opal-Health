@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Appointment Summary {% endblock %}
+
+{% block links %}
+<style>
+	h6 {
+		margin: 0px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h3 class="observed picDivHeader">Appointment Summary</h3>
+</div>
+<div class="mainDiv">
+	<div class="textContainer">
+		<h6> Date of Appointment:</h6>
+		<p>{{ app.get_scheduled }}</p>
+		<h6> Issue:</h6>
+		<p> {{ app.issue }} </p>
+		<h6> Doctor Post-Appointment Summary: </h6>
+		<p> {{ app.post_summary }} </p>
+	</div>
+</div>
+{% endblock %}

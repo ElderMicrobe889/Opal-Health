@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %} Our Services {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'info/CSS/services.css' %}" rel="stylesheet" type="text/css" />
+<script defer="defer" type="text/javascript" src="{% static 'info/JS/services.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h3 class="observed picDivHeader">Our Services</h3>
+  <h6 class="picDivHeader">Click The Icons To View Our Various Services</h2>
+</div>
+<div id="pickerDiv" class="mainDiv">
+	<div id="holder">
+		<button id="leftButton" class="leftRightButton"><h3><</h3></button>
+    <img id="dailyimg" class="picked" src="{% static 'info/IMG/Services/EVERYDAY.svg' %}"/>
+    <img id="familyimg" src="{% static 'info/IMG/Services/FAMILY.svg' %}"/>
+    <img id="mentalimg" src="{% static 'info/IMG/Services/MENTAL.svg' %}"/>
+    <img id="medicalimg" src="{% static 'info/IMG/Services/EXPERT.svg' %}"/>
+    <img id="crisisimg" src="{% static 'info/IMG/Services/CRISIS.svg' %}"/>
+    <button id="rightButton" class="leftRightButton"><h3>></h3></button>
+</div>
+</div>
+  <div id="daily" class="mainDiv containerQuery accent2Div picked">
+	  <div class="imgContainer">
+		  <img type="image/jpeg" src="{% static 'info/IMG/Services/Daily.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Daily Care</h4>
+		  <h5>All services are available 24/7, call to get started today. Our trained medical staff is ready to assist with any problem at any time- from basic pediatric needs, to dermatology, we are ready to help.</h5>
+		  <a  id="FAQDivScroller" href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+  <div id="family" class="mainDiv containerQuery accent2Div">
+	  <div class="imgContainer">
+		  <img type="image/jpeg" src="{% static 'info/IMG/Services/Family.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Family/Children</h4>
+		  <h5>Healines services extend to all members of the family, regardless of their age. From our pediatric team to our professional internists, we are ready to assist people of all age groups.</h5>
+		  <a  id="FAQDivScroller" href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+  <div id="mental" class="mainDiv containerQuery accent2Div">
+	  <div class="imgContainer">
+		  <img type="image/jpeg" src="{% static 'info/IMG/Services/Mental.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Mental Health</h4>
+		  <h5>Given the current state of the world, your mental health is as important as ever. Healine has a strong team of psychologists and psychiatrists just a call away. All conversations with our support team are completely confidential.</h5>
+		  <a  id="FAQDivScroller" href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+  <div id="medical" class="mainDiv containerQuery accent2Div">
+	  <div class="imgContainer">
+		  <img type="image/jpeg" src="{% static 'info/IMG/Services/Medical.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Medical Professionals</h4>
+		  <h5>Healine has a full team of support staff from all fields of healthcare always ready to assist you. Our selection of top medical professionals are just a call away, and ready to help you.</h5>
+		  <a  id="FAQDivScroller" href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+  <div id="crisis" class="mainDiv containerQuery accent2Div">
+	  <div class="imgContainer">
+		  <img type="image/jpeg" src="{% static 'info/IMG/Services/Crisis.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Crisis Prevention</h4>
+		  <h5>Since Healine is a virtual enterprise, we are always ready to help. Our call lines are available 24/7, and we always have trained mental specialists ready to help you. </h5>
+		  <a  id="FAQDivScroller" href="/users/register/" ><button> Get Started Today</button></a>
+	  </div>
+  </div>
+<div id="FAQDiv" class="mainDiv">
+    <div class="textContainer">
+        <h1>FAQs</h1>
+        <div>
+        <h5>How Much Does It Cost?</h5>
+        <p>For a basic medical consultation, our services normally cost between 25 and 50 dollars depending on the complexity of the case. Cost is evaluated on a case-by-case basis, and won’t be the same for everyone.</p>
+        </div>
+        <div>
+        <h5>Can We Prescribe Medication?</h5>
+        <p>Yes, medication can be prescribed by one of our online doctors. While we can prescribe medication however, it is not a guarantee that you will get a prescription, and we may direct you to an in person doctor in some cases.</p>
+        </div>
+        <div>
+        <h5>How Will I Get The Medications Prescribed To Me?</h5>
+        <p>Healine does not dispense any prescription drugs. If a doctor prescribes you medication, it is submitted to the pharmacy of your choice. You can then pick it up at a later date.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Appointment Complete {% endblock %}
+
+{% block links %}
+<style>
+	body {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv">
+	<div class="textContainer">
+		<h1>Appointment Complete!</h1>
+		<p>You're appointment has ended, and the doctor is now writing a quick summary of what happened.</p>
+		<p>You should receive an email with said summary soon.</p>
+		<p>Feel free to leave the page whenever you need to.</p>
+	</div>
+</div>
+{% endblock %}

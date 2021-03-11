@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Appointment Accepted!</title>
+</head>
+<body>
+	<h1> Hello, {{ app.patient.display_name }} </h1>
+	<h2> Your appointment has been accepted by {{ app.doctor.display_name }} </h2>
+	<h3> The appointment will take place on {{ app.get_scheduled }} </h3>
+	<h3> When the time comes, the appointment will be able to be joined on the appointment page </h3>
+	<h4> Hope to see you there! </h4>
+</body>
+</html>

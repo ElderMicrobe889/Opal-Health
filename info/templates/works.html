@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} How It Works {% endblock %}
+
+
+{% block links %}
+<style>
+	.picDivSmall {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, linear-gradient(45deg, hsla(298, 76%, 50%, 0.9) 0%, hsla(288, 83%, 38%, 1) 100%);
+	}
+
+    h5 a {
+        color: blue;
+    }
+
+    h5 a:hover {
+        text-decoration: underline;
+    }
+
+	h5 {
+		font-weight: normal;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall textLeft">
+	<h1 class="picDivHeader observed">How It Works</h1>
+</div>
+<div id="mainDiv">
+	{% load static %}
+	<div class="containerQuery">
+		<div class="imgContainer">
+			<img src="{% static 'info/IMG/Steps/sign_up.gif' %}" alt="Gif of first step - Sign Up For An Account"/>
+	  </div>
+	  <div class="textContainer textRight fix">
+		  <h4>Step 1 - Sign Up</h4>
+		  <h5>Go to the <a href="/users/register/">Sign&nbsp;Up</a> page, and create an account. You’ll get a confirmation email afterwards, confirm your email and move on to step 2.</h5>
+	  </div>
+  </div>
+    <div class="mainDiv containerQueryReverse accentDiv">
+	  <div class="imgContainer">
+		  <img src="{% static 'info/IMG/Steps/create_app.gif' %}" alt="Gif of second step - Schedule A Meeting"/>
+	  </div>
+	  <div class="textContainer">
+		  <h4>Step 2 - Schedule A Meeting</h4>
+		  <h5>Click the <a href="/service/create/">“Schedule an appointment”</a> link on the <a href="/service/appointments/">Appointments</a> page and fill in the required information. When one of our doctors accepts the appointment, you’ll get an email reminding you of the appointment.</h5>
+	  </div>
+  </div>
+  <div class="mainDiv containerQuery">
+	  <div class="imgContainer">
+		  <img src="{% static 'info/IMG/Steps/join_app.gif' %}" alt="Gif of third step - Join The Meeting"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>Step 3 - Join The Meeting</h4>
+		  <h5>When it is time for the appointment, find it in the list shown on the <a href="/service/appointments/">Appointments page</a>. Configure your microphone and camera settings and join the call to talk to one of our skilled doctors via the text chat or your microphone.</h5>
+          <a href="/users/register/"><button>Join Today</button></a>
+	  </div>
+  </div>
+</div>
+{% endblock %}

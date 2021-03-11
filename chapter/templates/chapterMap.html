@@ -1,0 +1,53 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} About {% endblock %}
+
+{% block links %}
+<style>
+	ul {
+		list-style-type: upper-roman;
+	}
+
+	ul h6 {
+		margin: 12px;
+	}
+
+	li::marker {
+		font-size: calc(1.5rem + 1.6vw);
+	}
+
+	li ul li::marker {
+		font-size: calc(1.1rem + 1vw);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h1 class="picDivHeader observed">Sitemap</h1>
+</div>
+<div class="textContainer">
+	<ul>
+		<li>
+			<h3>General</h3>
+			<ul>
+				<li><a href="/chapter/">
+						<h6>Home</h6>
+					</a></li>
+				<li><a href="/chapter/info/">
+						<h6>Chapter Information</h6>
+					</a></li>
+				<li><a href="/chapter/education/">
+						<h6>Education</h6>
+					</a></li>
+				<li><a href="/chapter/activities/">
+						<h6>Activities</h6>
+					</a></li>
+				<li><a href="/chapter/about/">
+						<h6>About</h6>
+					</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+{% endblock %}

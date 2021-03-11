@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'chapter/IMG/fav/apple-icon-57x57.png' %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static 'chapter/IMG/fav/apple-icon-60x60.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'chapter/IMG/fav/apple-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'chapter/IMG/fav/apple-icon-76x76.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'chapter/IMG/fav/apple-icon-114x114.png' %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'chapter/IMG/fav/apple-icon-120x120.png' %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'chapter/IMG/fav/apple-icon-144x144.png' %}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'chapter/IMG/fav/apple-icon-152x152.png' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'chapter/IMG/fav/apple-icon-180x180.png' %}">
+	<link rel="icon" type="image/png" sizes="192x192" href="{% static 'chapter/IMG/fav/android-icon-192x192.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'chapter/IMG/fav/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'chapter/IMG/fav/favicon-96x96.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'chapter/IMG/fav/favicon-16x16.png' %}">
+  <link rel="manifest" href="/chapter/manifest">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{% static 'chapter/IMG/fav/ms-icon-144x144.png' %}">
+	<meta name="theme-color" content="#ffffff">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+	<meta name="google" value="notranslate">
+	<title>{% block title %}{% endblock %}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    {% load static %}
+	<link href="{% static 'base/CSS/text.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'base/CSS/master.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'chapter/CSS/chapterMaster.css' %}" rel="stylesheet" type="text/css" />
+	<script defer="defer" type="text/javascript" src="{% static 'base/JS/master.js' %}"></script>
+	<script defer="defer" type="text/javascript" src="{% static 'chapter/JS/chapterMaster.js' %}"></script>
+	{% block links %} {% endblock %}
+</head>
+<body>
+	<header>
+		<button id="menuButton"><span id="menuIcon"></span></button>
+          <a href="/chapter/" id="logoContainer"><img id="logo" src="{% static 'chapter/IMG/Banner.svg' %}" alt="BASH Logo" aria-label="Home Page"/></a>
+          <nav id="nav">
+            <a href="/chapter/info/" class="navLink desktop" aria-label="Chapter Page">Chapter</a>
+            <a href="/chapter/education/" class="navLink desktop" aria-label="Education Page">Education</a>
+            <a href="/chapter/activities/" class="navLink desktop" aria-label="Activities Page">Activities</a>
+            <a href="/chapter/about/" class="navLink desktop" aria-label="About Page">About</a>
+            <a href="/" class="navLink both" aria-label="Design Brief Page">Design Brief</a>
+          </nav>
+          <nav id="menuContainer">
+          <div id="menu">
+              <a href="/chapter/" class="navLink phone" aria-label="Home Page">Home</a>
+              <a href="/chapter/info/" class="navLink phone" aria-label="Chapter Page">Chapter</a>
+              <a href="/chapter/education/" class="navLink phone" aria-label="Education Page">Education</a>
+              <a href="/chapter/activities/" class="navLink phone" aria-label="Activities Page">Activities</a>
+              <a href="/chapter/about/" class="navLink phone" aria-label="About Page">About</a>
+          </div>
+      </nav>
+  </header>
+  <section class="main">
+    {% block content %}
+    {% endblock %}
+  </section>
+      <footer>
+          <a href="/chapter/sitemap/" class="footerLink">Sitemap</a>
+          <a href="/chapter/about/" class="footerLink" aria-label="About Page">About</a>
+          <p id="toTop" class="footerLink">Back To Top</p>
+          <div id="socialLinksDiv">
+              <a href="mailto:bashtsa@gmail.com" aria-label="Email BASH TSA" class="footerLink" target="_blank"><img class="socialLink" src="{% static 'chapter/IMG/mail.svg' %}" alt="Email Logo"></a>
+              <a href="https://www.instagram.com/bash.tsa/" target="_blank" class="footerLink"><img class="socialLink" src="{% static 'chapter/IMG/instagram.png' %}" alt="Instagram Logo" aria-label="View BASH TSA's Instagram Page"></a>
+          </div>
+      </footer>
+</body>
+</html>

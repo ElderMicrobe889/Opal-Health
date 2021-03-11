@@ -1,0 +1,49 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% load static %}
+
+{% block links %}
+<style>
+	h5 {
+		font-weight: normal;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDiv">
+	<h1 class="picDivHeader observed">BASH TSA</h1>
+</div>
+<div class="mainDiv containerQuery">
+	<div class="imgContainer">
+		<img style="width:75%;" src="{% static '/chapter/IMG/tsa_logo.png' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>What is TSA?</h4>
+		  <h5>The Technology Student Association (TSA), is a club, otherwise known as a FLEX at some schools. In TSA, students work individually or in groups in different STEM (Science, Technology, Engineering, and Mathematics) events.</h5>
+          <a href="/chapter/about/#tsa" ><button>More About TSA</button></a>
+	  </div>
+  </div>
+  <div class="mainDiv containerQueryReverse accentDiv">
+	  <div class="imgContainer">
+		  <img src="{% static '/chapter/IMG/chapter.jpg' %}"/>
+	  </div>
+	  <div class="textContainer textLeft">
+		  <h4>TSA at BASH</h4>
+		  <h5>Boyertown Area Senior High, BASH, is one of the best schools in the area. There are many extra-curricular activities offered here, one of them being TSA. TSA has been running at BASH for around 31 years now, and is still going strong.</h5>
+		  <a href="/chapter/info/" ><button>More About Our Chapter</button></a>
+	  </div>
+  </div>
+  <div class="mainDiv containerQuery">
+      <div class="imgContainer">
+		  <img style="width:75%;" src="{% static '/chapter/IMG/BCTC-Logo.png' %}"/>
+	  </div>
+	  <div class="textContainer textRight">
+		  <h4>BCTC</h4>
+		  <h5>Berks Career and Technology Center (BCTC) is a program that offers students opportunities to gain real-world experience in the field of their choice. Students go off-campus to the BCTC campuses in order to gain the skills and certifications needed to work in the real world.</h5>
+		  <a href="/chapter/education/" ><button>More About BCTC</button></a>
+	  </div>
+  </div>
+{% endblock %}

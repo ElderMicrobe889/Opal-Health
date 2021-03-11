@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Appointment {% endblock %}
+
+{% block links %}
+<style>
+	body {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+	}
+</style>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'service/JS/createAppointment.js' %}" defer="defer"></script>
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv">
+	<form class="textContainer textMid" action="/service/create/" method="post">
+		<h1> Create Appointment </h1>
+		{% csrf_token %}
+		<div class="formGroup">
+			<input type="text" placeholder="Describe The Issues You've Been Having" autocomplete="off" required="required" id="issue" name="issue"/>
+            <label for="issue"> Describe The Issues You've Been Having </label>
+        </div>
+        <div class="formGroup">
+          <input type="date" name="date" id="date" required="required" placeholder="Date" autocomplete="off"/>
+          <label for="date"> Date </label>
+        </div>
+        <div class="formGroup">
+          <input autocomplete="off" required="required" type="time" name="time" placeholder="Time" id="time"/>
+          <label for="time"> Time </label>
+        </div>
+        <div class="formGroup">
+          <button id="submitButton" onclick="toggleLoad();" value="OK" type="submit">{% formSubmit 'Submit' as submit %}{{submit|safe}}</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

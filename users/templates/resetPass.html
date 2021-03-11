@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Reset Password {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<script defer="defer" type="text/javascript" src="{% static 'users/JS/resetPass.js' %}"></script>
+
+<style>
+	body {
+		background: url({% static 'info/IMG/squarebg2.png' %}) repeat center center, var(--backgroundColor);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv">
+	<form id="form" action="/users/reset/" method="post" class="textContainer textMid">
+		{% csrf_token %}
+		<h1>Reset Password</h1>
+		<input type="hidden" name="id" value="{{mailId}}"/>
+          <div class="formGroup passwordRuleList" id="passwordError" style="display:none;">  
+              <p style="margin-top: 5px; color:red;">Your new password contains the following errors:</p>
+              <ul style="color:red;" id="errorList"></ul>
+          </div>
+          <div class="formGroup passwordRuleList" id="passwordHelp">
+              <p>Please make sure your new password follows these rules:</p>
+              {{ passwordHelp }}
+          </div>
+          <div class="formGroup">
+              <input autocomplete="new-password" id="newPassword" type="password" placeholder="New Password" name="newPassword" required="required" />
+              <label for="newPassword">Password</label>
+          </div>
+          <div class="formGroup">
+              <input autocomplete="new-password" id="confirmPassword" type="password" placeholder="Confirm Password" name="confirm-password" required="required" />
+              <label for="confirmPassword">Confirm Password</label>
+          </div>
+		  <div class="formGroup">
+              <button id="submitButton" type="button">{% formSubmit 'Reset' as submit %}{{submit|safe}}</button>
+          </div>
+	  </form>
+</div>
+{% endblock %}

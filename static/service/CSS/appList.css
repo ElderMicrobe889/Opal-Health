@@ -1,0 +1,62 @@
+.textContainer {
+    padding-top: 0px;
+}
+
+.picDivHeader {
+    margin: 0px;
+}
+
+table {
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table h5 {
+  margin: 0px;
+}
+
+tr {
+    width: 100%;
+}
+
+tr:nth-of-type(odd) {
+    background-color: var(--accent2Color);
+}
+
+tr:first-of-type {
+    background-color: var(--accentColor);
+}
+
+td {
+    border-left: 2px var(--darkColor) solid;
+    border-right: 2px var(--darkColor) solid;
+}
+
+.picDivHeader a {
+    color: darkblue;
+}
+
+.picDivHeader a:hover {
+    text-decoration: underline;
+}
+
+button {
+  border: 0px!important;
+}
+
+button:hover {
+    background-color: initial!important;
+    color: initial!important;
+}
+
+td a {
+    height: 100%;
+}
+
+@media only screen and (max-width: 550px) {
+    tr h5, tr p {
+        font-size: 1rem;
+    }
+}

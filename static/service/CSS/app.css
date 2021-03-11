@@ -1,0 +1,199 @@
+body {
+    overflow-y: hidden;
+    max-height: 100vh;
+    background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+}
+
+footer, header, .noDisplay {
+  display: none;
+}
+
+video {
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.activeVideo{
+  border: solid 5px greenyellow;
+}
+
+#coverDiv {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: var(--lightColor);
+  z-index: 1;
+  display: flex;
+  opacity: 1;
+  flex-direction: column-reverse;
+  transition: opacity var(--menuTransitionTime) linear;
+}
+
+#coverDiv.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.full ~ button {
+    position: fixed;
+    right: 2vh;
+    bottom: calc(2vh + 90px);
+}
+
+.full ~ button:hover {
+    background-color: initial;
+}
+
+button span {
+    display: block;
+    position: absolute;
+    width: 0px;
+    top: 50%;
+    left: 50%;
+    height: 3px;
+    transform: rotateZ(45deg);
+    background-color: red;
+    transition: width 250ms linear, left 250ms linear;
+}
+
+button.crossed span {
+    width: 100%;
+    left: 0px;
+}
+
+#coverDiv button {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+}
+
+#coverDiv button.text {
+    width: initial;
+    height: initial;
+}
+
+.full {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 90px;
+    right: 0px;
+    max-width: 100%;
+    height: calc(100vh - 90px);
+    margin: auto;
+}
+
+.corner {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    max-height: 20vh;
+}
+
+.micIcon{
+  max-height: 70px;
+}
+
+#buttonContainer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--accentColor);
+    box-shadow: 0px 2px 8px 1px black;
+}
+
+#buttonContainer button, button {
+    width: 90px;
+    height: 90px;
+    border: none;
+    padding: 10px;
+    position: relative;
+}
+
+button img {
+    width: 100%;
+}
+
+#messageMenuContainer {
+    position: fixed;
+    top: 100vh;
+    height: calc(100vh - 90px);
+    width: 100vw;
+    transition: top var(--menuTransitionTime) linear;
+    background-color: var(--menuColor);
+}
+
+#messageMenuContainer.show {
+    top: 0px;
+}
+
+#messageMenu {
+    height: 100%;
+    width: 87.5%;
+    margin: auto;
+}
+
+#messageMenu h3 {
+    margin: 0px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#messages {
+    height: 60%;
+    overflow-y: auto;
+    border: var(--darkColor) 3px dashed;
+    background-color: var(--accentColor);
+    max-width: 87.5vw;
+}
+
+#messages p {
+  padding-left: 10px;
+}
+
+input {
+    width: calc(100% - 50px);
+    max-width: calc(87.5vw - 90px);
+}
+
+#send {
+    height: 42px;
+    width: 42px;
+}
+
+#send img {
+    max-height: 90px;
+    max-width: 90px;
+    width: initial;
+}
+
+.formGroup {
+    width: 100%;
+}
+
+@media only screen and (min-width: 1263px) {
+    #messageMenuButton {
+        display: none;
+    }
+
+    #messageMenuContainer {
+        transition: none;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        height: calc(100vh - 90px);
+        width: 30vw;
+        box-shadow: 0px 0px 8px 1px black;
+    }
+
+    .full {
+        width: 70vw;
+        margin-left: 30vw;
+    }
+}

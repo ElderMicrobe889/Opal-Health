@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healine Appointment Summary</title>
+  </head>
+  <body>
+    <h1> Hello, {{app.patient.display_name}} </h1>
+    <h2> You recently completed an appointment with {{app.doctor.display_name}} </h2>
+    <h3> Here is a summary of that appointment: </h3>
+    <p> {{app.post_summary}} </p>
+    <p> You can view this summary and some other information from the appointments page aswell </p>
+  </body>
+</html>

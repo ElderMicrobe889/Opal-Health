@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} Appointments {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'service/CSS/appList.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv picDivSmall textLeft">
+	<h3 class="observed picDivHeader">Appointments <span class="keepTogether">for {{ user.display_name }} <span></h3>
+      {% if doctor %}
+      <h2 class="picDivHeader"><a href="/service/list/">View & Accept Appointments</a></h2>
+      {% else %}
+      <h2 class="picDivHeader"><a href="/service/create/">Schedule An Appointment</a></h2>
+      {% endif %}
+</div>
+  <div class="mainDiv">
+      {% if apps|length == 0 %}
+      <div class="textContainer textMid">
+      <h2> No Appointments </h2>
+      {% else %}
+      <div class="textMid">
+      <table>
+          <tr>
+            <th><h5>Date & Time</h5></th>
+            <th><h5>Status</h5></th>
+            <th><h5>{% if doctor %}Patient{% else %}Doctor{% endif %}</h5></th>
+            <th><h5>Link</h5></th>
+          </tr>
+          {% for app in apps %}
+          <tr>
+              <td><p>{{app.get_scheduled}}</p></td>
+              <td><p>{{app.get_status}}</p></td>
+              <td><p>{% if doctor %}{{app.patient.display_name}}{% else %}{{app.doctor.display_name|default:"N/A"}}{% endif %}</p></td>
+              <td>
+
+                {% if app.get_status == "Ongoing" %}
+                  <a href="{{app.link}}"> <button>Join</button> </a>
+                {% elif app.get_status == "Completed" %}
+                  <a href="/service/summary/?id={{app.id}}"><button>Summary</button></a>
+                {% else %}
+                  <form action="/service/delete/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{app.id}}"/>
+                    <button onclick="toggleLoad();" type="submit" value="OK">{% formSubmit 'Cancel' as submit %}{{submit|safe}}</button>
+                  </form>
+                {% endif %}
+
+              </td>
+          </tr>
+          {% endfor %}
+      </table>
+      {% endif %}
+{% endblock %}

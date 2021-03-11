@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} Available Appointments {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'service/CSS/appList.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv picDivSmall">
+	<h3 class="observed picDivHeader">Available Appointments</h3>
+</div>
+<div class="mainDiv">
+	{% if apps|length == 0 %}
+	  <div class="textContainer textMid">
+		  <h2> No Appointments </h2>
+    </div>
+	{% else %}
+		<div class="textMid">
+			<table>
+				<tr>
+					<th>
+						<h5>Date & Time</h5>
+					</th>
+					<th>
+						<h5>Status</h5>
+					</th>
+					<th>
+						<h5>Patient</h5>
+					</th>
+					<th>
+						<h5>Link</h5>
+					</th>
+				</tr>
+				{% for app in apps %}
+				<tr>
+					<td>
+						<p>{{app.get_scheduled}}</p>
+					</td>
+					<td>
+						<p>{{app.get_status}}</p>
+					</td>
+					<td>
+						<p>{{app.patient.display_name}}</p>
+					</td>
+					<td>
+						<form action="/service/accept/" method="post">
+							{% csrf_token %}
+							<input type="hidden" name="id" value="{{app.id}}"/>
+              <button onclick="toggleLoad();" type="submit" value="OK">{% formSubmit 'Accept' as submit %}{{submit|safe}}</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+{% endblock %}

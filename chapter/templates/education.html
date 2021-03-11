@@ -1,0 +1,166 @@
+{% extends 'chapterBase.html' %}
+
+{% block title %} Education {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<link href="{% static 'chapter/CSS/education.css' %}" rel="stylesheet" type="text/css" />
+<script defer="defer" type="text/javascript" src="{% static 'chapter/JS/education.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+<div class="mainDiv picDivSmall">
+	<h1 class="picDivHeader observed">Education</h1>
+</div>
+<div class="mainDiv">
+	<div id="picker">
+		<div id="leftButton" class="option leftRightButton">
+			<h4>
+				<</h4>
+		</div>
+		<div id="BCTC" class="option picked">
+			<h4>BCTC</h4>
+		</div>
+        <!--
+		<div id="math" class="option">
+			<h4>Math</h4>
+		</div>
+		<div id="science" class="option">
+			<h4>Science</h4>
+		</div>
+		<div id="socialStudies" class="option">
+			<h4>Social Studies</h4>
+		</div>
+		<div id="business" class="option">
+			<h4>Business</h4>
+		</div>
+		<div id="art" class="option">
+			<h4>Art</h4>
+		</div>
+        -->
+        <div id="techEd" class="option">
+			<h4>Tech Ed</h4>
+		</div>
+		<div id="rightButton" class="option leftRightButton">
+			<h4>></h4>
+		</div>
+	</div>
+    <p id="info" class="textCenter">(Click on any of the above options for more information on the subject)</p>
+	<!--
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+        SUBJECT STARTS HERE
+    -->
+	<div id="SUBJECTDIV" class="optionDiv">
+		<div class="textContainer subjectHeaderContainer">
+			<h2>SUBJECT</h2>
+		</div>
+		<div class="mainDiv containerQuery">
+			<div class="imgContainer">
+				<img src="https://www.nomadfoods.com/wp-content/uploads/2018/08/placeholder-1-e1533569576673-960x960.png"/>
+        	  </div>
+        	  <div class="textContainer textRight editedTextContainer firstEdited lastEdited">
+        		  <h4>Big Project</h4>
+        		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.    Bibendum      est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet,    consectetur adipiscing   elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis  auctor elit. Nec sagittis   aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod     tempor incididunt ut labore et     dolore magna aliqua. Bibendum est ultricies integer quis auctor elit. Nec sagittis aliquam   malesuada bibendum arcu.</p>
+        	  </div>
+        </div>
+        <div class="textContainer subjectHeaderContainer textCenter">
+            <h2>SUBJECT Courses</h2>
+        </div>
+        <div class="textContainer editedTextContainer firstEdited">
+        	  <h4>Course 1</h4>
+        	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.       Bibendum      est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet,    consectetur adipiscing   elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultriciesinteger     quis  auctor elit. Nec sagittis   aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do  eiusmod     tempor incididunt ut labore et     dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.Nec sagittis    aliquam   malesuada bibendum arcu.</p>
+        </div>
+        <div class="textContainer textRight editedTextContainer">
+        	  <h4>Course 2</h4>
+        	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.       Bibendum      est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet,    consectetur adipiscing   elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultriciesinteger     quis  auctor elit. Nec sagittis   aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do  eiusmod     tempor incididunt ut labore et     dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.Nec sagittis    aliquam   malesuada bibendum arcu.</p>
+        </div>
+        <div class="textContainer editedTextContainer lastEdited">
+        	  <h4>Course 3</h4>
+        	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.       Bibendum      est ultricies integer quis auctor elit. Nec sagittis aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet,    consectetur adipiscing   elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultriciesinteger     quis  auctor elit. Nec sagittis   aliquam malesuada bibendum arcu. Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do  eiusmod     tempor incididunt ut labore et     dolore magna aliqua. Bibendum est ultricies integer quis auctor elit.Nec sagittis    aliquam   malesuada bibendum arcu.</p>
+        </div>
+    </div>
+    <!--
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+        BCTC STARTS HERE
+    -->
+    <div id="BCTCDiv" class="optionDiv picked">
+        <div class="textContainer subjectHeaderContainer">
+            <h2>BCTC</h2>
+        </div>
+        <div class="mainDiv">
+        	  <div class="imgContainer">
+        		  <img style="width:65%; padding-left:17.5%;" src="{% static '/chapter/IMG/education/BCTC-AboutPic.jpg' %}"/>
+        	  </div>
+        	  <div class="textContainer textRight editedTextContainer firstEdited lastEdited">
+        		  <h4>About BCTC</h4>
+        		  <p>BCTC is a career and technology program, participating students spend half of their day at school, and the other half at the BCTC. Students will be placed into either the AM or PM schedule, AM students go to BCTC in the morning and have normal classes in the afternoon, while PM students do the opposite. Courses at BCTC focus on learning through hands-on experience rather than learning through theory. A wide range of courses are available including, but not limited to: civil protection, programming, robotics, media production, and metalworking.  More information about a few of the courses are below. BCTC also provides occupational opportunities to students who show exceptional talent in the form of internships and apprenticeship, in some cases this can lead to real employment opportunities. Overall, BCTC is a way of learning that allows students to get hands-on experience before entering the workforce.</p>
+        	  </div>
+        </div>
+        <div class="textContainer subjectHeaderContainer textCenter">
+            <h2>BCTC Courses</h2>
+        </div>
+        <div class="textContainer editedTextContainer firstEdited">
+        	  <h4>Information Technology Programming</h4>
+        	  <p>IT-Programming is a course that focuses on fields related to software development. Students use various programming languages such as Visual Basic, C++, and Java to develop applications that could be used in the real world. By doing this, they gain insight into many different concepts, and develop an understanding of how to write applications for real-world use. In addition, students learn how to use various applications that are part of the Microsoft Office Suite such as Word and Excel. By combining these skills with other concepts taught in the course, students learn how to succeed in the software development world.</p>
+        </div>
+        <div class="textContainer textRight editedTextContainer">
+        	  <h4>Video & Media Content Production</h4>
+        	  <p>Video & Media Content Production focuses on the skills required to work in fields related to media production. Students learn the full lifecycle of video production, from initial filming to airing. They master various programs such as Adobe After Effects and Adobe Premiere in order to produce high quality video content. After completing the core curriculum, students have a choice of specializing in either video production or photography. On top of this they get the chance to assist on and create various promotional videos for BCTC, and manage the morning announcements.</p>
+        </div>
+        <div class="textContainer editedTextContainer lastEdited">
+        	  <h4>Culinary Arts</h4>
+        	  <p>Culinary arts focuses on the preparation, and presentation of various dishes. Students enrolled in this school of study learn various culinary concepts for use in the real world. They’ll gain the chance to work at the student-run restaurant at BCTC, giving them direct experience with cooking, waiting tables, and customer service. Graduate students are able to directly enter the food industry at an entry level job using connections made at BCTC.</p>
+        </div>
+    </div>
+    <!--
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+        techEd STARTS HERE
+    -->
+	<div id="techEdDiv" class="optionDiv">
+		<div class="textContainer subjectHeaderContainer">
+			<h2>Technology Education</h2>
+		</div>
+		<div class="mainDiv containerQuery">
+        	  <div class="textContainer textRight editedTextContainer firstEdited lastEdited">
+        		  <h4>Coin Sorter Project</h4>
+        		  <p> In advanced Tech and Engineering, the big project completed by students will be the Coin Sorter project. The coin sorter project consists of designing, prototyping, and making an automated coin counter/sorter. Students are assigned into one of two groups, rail and wheel, the rail group will make a coin sorter using a rail solution, and the wheel group does the same but with a wheel solution. Each group is then divided into subgroups that will focus on one of the following three things, sorting, counting, and storage.</p>
+        	  </div>
+        </div>
+        <div class="textContainer subjectHeaderContainer textCenter">
+            <h2>Technology Education Courses</h2>
+        </div>
+        <div class="textContainer editedTextContainer firstEdited">
+        	  <h4>Advanced Tech and Engineering</h4>
+        	  <p>Advanced Tech and Engineering is an advanced variety engineering course. Projects done in this class feature the use of Solidworks and 3D printing. In one project students design and build a coin machine, and in another they design a robotic arm designed to aid in assembly lines. The course also includes other projects that utilize electronics and programming, microcontrollers, robotics, product design and development, and modular construction.</p>
+        </div>
+        <div class="textContainer textRight editedTextContainer">
+        	  <h4>Technical Drawing and Design</h4>
+        	  <p>Technical Drawing and Design is focused around teaching students how to accurately draft and design technical components. In the course students start out hand-drawing various parts, and then move on to drafting in applications such as Solidworks and Chief Architect.</p>
+        </div>
+        <div class="textContainer editedTextContainer lastEdited">
+        	  <h4>Photographic Imaging</h4>
+        	  <p>Photographic Imaging is an introductory photography course. This course focuses on the taking and editing of photographs using a plethora of techniques. Students will use the Adobe Creative Cloud resources provided by the school in order to do photographic editing.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

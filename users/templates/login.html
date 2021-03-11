@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} Log In {% endblock %}
+
+{% block links %}
+
+{% load static %}
+<script defer="defer" type="text/javascript" src="{% static 'users/JS/login.js' %}"></script>
+
+<style>
+	body {
+		background: url(/static/info/IMG/squarebg2.png) repeat center center, var(--backgroundColor);
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+{% load formTags %}
+<div class="mainDiv">
+	<form id="form" action="/users/login/" method="post" class="textContainer textMid">
+		{% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}"/>
+		<h2>Log In</h2>
+		<div class="formGroup">
+			<input id="username" type="input" placeholder="Username or Email" name="username" required="required" />
+            <label for="username">Username or Email</label>
+          </div>
+		      <div class="formGroup">
+              <input id="password" type="password" placeholder="Password" name="password" required="required" />
+              <label for="password">Password</label>
+          </div>
+          <div class="formGroup">
+		        <button id="submitButton" type="button">{% formSubmit 'Login' as submit %}{{submit|safe}}</button>
+          </div>
+          <div class="formGroup">
+              <p><a href="/users/resetrequest/">Forgot Password</a> or <a href="/users/register/">Sign Up</a></p>
+          </div>
+	  </form>
+</div>
+{% endblock %}

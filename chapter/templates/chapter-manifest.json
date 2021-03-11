@@ -1,0 +1,76 @@
+{% load static %}
+{
+  "name": "Boyertown Area Senior High TSA",
+  "short_name": "BASH TSA",
+  "description": "The Boyertown Area Senior High Chapter",
+  "categories": [
+    "education"
+  ],
+  "start_url": "/chapter",
+  "background_color": "#d8133b6",
+  "theme_color": "#d84562",
+  "display": "browser",
+  "lang": "en-US",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-36x36.png' %}",
+      "sizes": "36x36",
+      "type": "image/png",
+      "density": "0.75"
+    },
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-48x48.png' %}",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": "1.0"
+    },
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-72x72.png' %}",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "1.5"
+    },
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-96x96.png' %}",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "2.0"
+    },
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-144x144.png' %}",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "3.0"
+    },
+    {
+      "src": "{% static 'chapter/IMG/fav/android-icon-192x192.png' %}",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chapter Info",
+      "url": "/chapter/info",
+      "description": "View various information about the chapter"
+    },
+    {
+      "name": "BASH Education",
+      "url": "/chapter/education",
+      "description": "View various educational programs at BASH"
+    },
+    {
+      "name": "Chapter Activities",
+      "url": "/service/activities",
+      "description": "View fundraisers the chapter participates in"
+    },
+    {
+      "name": "About Our Chapter",
+      "url": "/chapter/about",
+      "description": "View information about TSA and this website"
+    }
+  ]
+}
