@@ -1,12 +1,12 @@
-# TSA-Webmaster2020
+# Opal Health
 
-A way for us to collaborate on our TSA Webmaster project
+A POC telemedicine webstie that uses webrtc and scaedrone to offer video/audio chats with doctors
 
 ## Apps
 
 ### Info 
 
-General information about the site, and TSA required stuff 
+General information about the site
 
 ### Service 
 
@@ -16,15 +16,11 @@ The actual service we want to provide via the site
 
 Stuff like login/register and user pages 
 
-### Chapter 
-
-Stuff specific to our TSA chapter 
-
 ## Base.html 
 
-All html files should USUALLY extend base.html (chapter pages should extend chapterBase.html), this has the navbar and footer, aswell as some required css/js. 
+All html files should USUALLY extend base.html this has the navbar and footer, aswell as some required css/js. 
 The links block in base.html can be use in order to add any additional css/js files. 
-The content block is where the content of the current page should go. Finally, the title block should contain the title for the page, it will get "Healine |" (or "BASH TSA |" for chapter pages) prepended, so for the login page it would be: "Healine | Login".
+The content block is where the content of the current page should go. Finally, the title block should contain the title for the page, it will get "Healine |" prepended, so for the login page it would be: "Healine | Login".
 
 ## Static Folder
 
